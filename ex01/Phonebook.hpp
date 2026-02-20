@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/17 12:10:08 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/02/20 17:45:05 by ivan             ###   ########.fr       */
+/*   Created: 2026/02/20 17:27:35 by ivan              #+#    #+#             */
+/*   Updated: 2026/02/20 17:45:06 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-int main()
+#include "Contact.hpp"
+
+class PhoneBook
 {
-    PhoneBook phonebook;
-    string command;
-    
-    while (true)
-    {
-        cout << "ADD | SEARCH | EXIT : ";
-        cin >> command;
-        
-        if (command == "EXIT")
-            break;
-        else if (command == "SEARCH")
-            phonebook.SEARCH();
-        else if (command == "ADD")
-            phonebook.ADD();
-    }
-}
+    private:
+        Contact contacts[8];
+        int count;
+        int oldest;
+            
+    public:
+        PhoneBook();
+        void ADD();
+        void SEARCH();
+};
+
+#endif

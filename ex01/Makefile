@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+         #
+#    By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 19:36:14 by ibettenc          #+#    #+#              #
-#    Updated: 2026/02/17 12:10:02 by ibettenc         ###   ########.fr        #
+#    Updated: 2026/02/20 17:45:04 by ivan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 ###################################################
 ## SOURCES
 
-SRC = main.cpp
+SRC = main.cpp Contact.cpp Phonebook.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
