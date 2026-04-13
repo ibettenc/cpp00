@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 17:29:40 by ivan              #+#    #+#             */
-/*   Updated: 2026/02/20 17:45:05 by ivan             ###   ########.fr       */
+/*   Updated: 2026/04/13 16:15:47 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,21 +87,26 @@ void PhoneBook::SEARCH()
 
 	int index;
 	cout << "Enter an index : ";
-	cin >> index;
+	if (!(cin >> index)) {
+        cin.clear();
+        cin.ignore(1000000, '\n');
+        cout << "Error : invalid input" << endl;
+        return;
+    }
+
+	cin.ignore(); 
 
 	if (index >= count || index < 0)
-		cout << "Error : enter a valid index" << endl;
+	{
+    	cout << "Error : enter a valid index" << endl;
+		return;
+	}
 	else
 	{
-		cout << "First name : ";
-		cout << contacts[index].get_first_name() << endl;
-		cout << "Last name : ";
-		cout << contacts[index].get_last_name() << endl;
-		cout << "Nickname : ";
-		cout << contacts[index].get_nickname() << endl;
-		cout << "Phone number : ";
-		cout << contacts[index].get_phone_number() << endl;
-		cout << "Darkest secret : ";
-		cout << contacts[index].get_darkest_secret() << endl;
+		cout << "First name : " << contacts[index].get_first_name() << endl;
+        cout << "Last name : " << contacts[index].get_last_name() << endl;
+        cout << "Nickname : " << contacts[index].get_nickname() << endl;
+        cout << "Phone number : " << contacts[index].get_phone_number() << endl;
+        cout << "Darkest secret : " << contacts[index].get_darkest_secret() << endl;
 	}
 }
