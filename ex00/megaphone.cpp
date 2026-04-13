@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 11:17:45 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/02/19 13:41:54 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/04/08 18:44:36 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(int ac, char **av)
         {
             for (int j = 0; av[i][j]; j++)
                 cout << static_cast<char>(toupper(av[i][j]));
+            cout << " ";
         }
         cout << endl;
     }        
