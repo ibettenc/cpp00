@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 12:10:08 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/04/13 16:12:09 by ivan             ###   ########.fr       */
+/*   Updated: 2026/05/04 17:59:35 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,15 @@ int main()
     while (true)
     {
         cout << "ADD | SEARCH | EXIT : ";
-        cin >> command;
-        
+
+        if (!(cin >> command))
+        {
+            cin.clear();
+            cin.ignore(256, '\n');
+            cout << endl;
+            break; // Sort de la boucle si Ctrl+D est pressé
+        }
+
         cin.ignore();
 
         if (command == "EXIT")
