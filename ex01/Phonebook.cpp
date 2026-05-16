@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 17:29:40 by ivan              #+#    #+#             */
-/*   Updated: 2026/04/13 16:15:47 by ivan             ###   ########.fr       */
+/*   Updated: 2026/05/16 13:09:54 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ PhoneBook::PhoneBook()
 	count = 0;
 	oldest = 0;
 }
+
 void PhoneBook::ADD()
 {
 	string first_name;
@@ -37,6 +38,25 @@ void PhoneBook::ADD()
 	cout << "Phone number : ";
 	cin >> phone_number;
 
+	bool is_valid = false;
+
+	while (!is_valid) {
+    is_valid = true;
+    for (size_t i = 0; i < phone_number.length(); ++i) {
+        if (!isdigit(static_cast<unsigned char>(phone_number[i]))) {
+            is_valid = false;
+            break;
+        }
+    }
+	
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	
+    if (!is_valid) {
+        cout << "Error : enter a valid number: ";
+        cin >> phone_number;
+    }
+}   
+	
 	cout << "Darkest secret : ";
 	cin >> darkest_secret;
 
@@ -51,6 +71,7 @@ void PhoneBook::ADD()
 	if (oldest == 8)
 		oldest = 0;
 }
+
 void PhoneBook::SEARCH()
 {
 	if (count == 0)
@@ -87,6 +108,7 @@ void PhoneBook::SEARCH()
 
 	int index;
 	cout << "Enter an index : ";
+	
 	if (!(cin >> index)) {
         cin.clear();
         cin.ignore(1000000, '\n');

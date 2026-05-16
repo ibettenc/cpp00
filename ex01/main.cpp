@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 12:10:08 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/04/13 16:12:09 by ivan             ###   ########.fr       */
+/*   Updated: 2026/05/16 13:07:59 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int main()
     {
         cout << "ADD | SEARCH | EXIT : ";
         cin >> command;
-        
-        cin.ignore();
 
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');        
+        
         if (command == "EXIT")
             break;
         else if (command == "SEARCH")

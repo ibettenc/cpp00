@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 17:25:53 by ivan              #+#    #+#             */
-/*   Updated: 2026/02/20 17:45:03 by ivan             ###   ########.fr       */
+/*   Updated: 2026/05/16 13:01:20 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <iomanip>
+#include <limits>
+
 using namespace std;
 
 class Contact
